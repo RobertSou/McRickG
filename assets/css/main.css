@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'PermaMarker';
+  src: url("../fonts/permanentMarkerRegular.ttf");
+}
+
+@font-face {
+  font-family: "UbuntuLight";
+  src: url("../fonts/Ubuntu-Light.ttf");
+}
+
+@font-face {
+  font-family: "UbuntuRegular";
+  src: url("../fonts/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: "UbuntuMedium";
+  src: url("../fonts/Ubuntu-Medium.ttf");
+}
+
+@font-face {
+  font-family: "UbuntuBold";
+  src: url("../fonts/Ubuntu-Bold.ttf");
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.9%;
+  line-height: 1.2;
+}
+
+body {
+  font-family: 'PermaMarker';
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+iframe {
+  border-radius: 4px;
+}
+
+body {
+  background-color: #FAFAFA;
+}
+/*# sourceMappingURL=main.css.map */
