@@ -120,7 +120,7 @@ header#cabecalho nav#menu ul li a:hover {
 /*== Main Geral */
 /*========================================*/
 main {
-  min-width: calc(100% - 250px);
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   display: grid;
@@ -133,6 +133,7 @@ main {
 }
 
 .mainOpenedMenuD {
+  width: calc(100% - 250px);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -169,7 +170,7 @@ main div#hamburger span {
 
 .animationHamburguer span{
   position: absolute;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .animationHamburguer span:nth-child(1) {
@@ -221,7 +222,7 @@ body.sobre div#imgRick {
 }
 
 body.contato div#imgRick {
-  background-image: url('../images/img-inicio.png');
+  background-image: url('../images/img-contato.png');
 }
 
 /*========================================*/
@@ -408,10 +409,55 @@ section#sectionContato article#articleContato {
   top: 40px;
   right: 0;
   z-index: 2;
-  background-color: var(--lighGrey);
+  background-color: #fff;
   box-shadow: 0px 3px 6px var(--darkGrey);
   border-radius: 4px;
-  padding: 5px 15px;
+}
+
+article#articleContato form#contato {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+article#articleContato form#contato textarea,
+article#articleContato form#contato input {
+  width: 100%;
+  padding: 15px 25px;
+  background-color: var(--lighGrey);
+  border: 0;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.07);
+  font-size: 1.0em;
+  color: var(--bgRed);
+  border-radius: 4px;
+}
+
+
+article#articleContato form#contato textarea::placeholder,
+article#articleContato form#contato input::placeholder {
+  font-family: "PermaMarker";
+  color: var(--bgRed);
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+form#contato input[type^="submit"]{
+  margin-top: 10px;
+  background-color: var(--bgRed) !important;
+  color: var(--lighGrey) !important;
+  font-family: "PermaMarker";
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+form#contato input[type^="submit"]:hover {
+  background-color: var(--lighGrey) !important;
+  color: var(--bgRed) !important;
+  box-shadow: 0px 3px 6px rgba(255, 0, 0, 0.2) !important;
+  transition: all .1s linear; 
+  cursor: pointer;
 }
 
 body.contato main#mainContato div#hamburger span {
@@ -446,7 +492,8 @@ body.contato main#mainContato div#icons a{
   }
 
   body.home div#imgRick,
-  body.sobre div#imgRick {
+  body.sobre div#imgRick,
+  body.contato div#imgRick {
     display: block;
     width: 250px !important;
     height: 250px !important;
@@ -474,6 +521,13 @@ body.contato main#mainContato div#icons a{
     position: initial;
     width: 80%;
   }
+
+  section#sectionContato header#headerContato,
+  section#sectionContato article#articleContato {
+    max-width: fit-content;
+    position: initial;
+    width: 80%;
+  }
   
   main div#icons {
     grid-column: 1 / 3;
@@ -492,17 +546,28 @@ body.contato main#mainContato div#icons a{
 @media screen and (min-width: 768px){
 
   main {
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     padding: 30px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
   }
 
+  .mainOpenedMenuD {
+    padding: 70px 40px;
+  }
+
   body.home div#imgRick,
   body.sobre div#imgRick {
     width: 450px;
     height: 450px;
+  }
+
+  
+  body.contato div#imgRick{
+    width: 550px;
+    height: 550px;
+    right: -10%;
   }
 
   div#logo {
@@ -532,6 +597,11 @@ body.contato main#mainContato div#icons a{
     width: 70%;
   }
 
+  section#sectionContato header#headerContato,
+  section#sectionContato article#articleContato {
+    right: 30% !important;
+  }
+
   main div#icons {
     grid-column: 1 / 3;
     grid-row: 3;
@@ -547,7 +617,12 @@ body.contato main#mainContato div#icons a{
 /*========================================*/
 @media screen and (min-width: 1366px){
   main {
+    width: 80vw;
     padding: 70px;
+  }
+
+  .mainOpenedMenuD {
+    padding: 70px 100px;
   }
 
   body.home div#imgRick,
@@ -555,6 +630,12 @@ body.contato main#mainContato div#icons a{
     width: 520px;
     height: 520px;
     right: 10%;
+  }
+
+  body.contato div#imgRick{
+    width: 620px;
+    height: 620px;
+    right: 0;
   }
 
   section#sectionSobre article#articleSobre {
@@ -569,6 +650,11 @@ body.contato main#mainContato div#icons a{
   
   section#sectionSobre header#headerSobre,
   section#sectionSobre article#articleSobre {
+    right: 40% !important;
+  }
+
+  section#sectionContato header#headerContato,
+  section#sectionContato article#articleContato {
     right: 40% !important;
   }
 
@@ -584,7 +670,12 @@ body.contato main#mainContato div#icons a{
 /*========================================*/
 @media screen and (min-width: 1920px){
   main {
+    width: 80vw;
     padding: 70px;
+  }
+
+  .mainOpenedMenuD {
+    padding: 70px 200px;
   }
 
   body.home div#imgRick,
@@ -601,12 +692,12 @@ body.contato main#mainContato div#icons a{
 
   section#sectionInicio header#headerInicio,
   section#sectionInicio article#articleInicio {
-    right: 40% !important;
+    right: 50% !important;
   }
   
   section#sectionSobre header#headerSobre,
   section#sectionSobre article#articleSobre {
-    right: 40% !important;
+    right: 50% !important;
   }
 
   main div#icons {
