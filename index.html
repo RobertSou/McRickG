@@ -12,41 +12,47 @@
     <link rel="stylesheet" href="./assets/css/main.css">
 
 </head>
-<body>
+<body class="home">
     <header id="cabecalho">
-        <div id="logo">
-            <h1>Mc Rick G</h1>
-        </div>
         <nav id="menu">
-            <div id="hambuger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a href="./contato.html">Contato</a></li>
             </ul>
         </nav>
     </header>
-
+    
     <main id="mainInicio">
+        
+        <div id="imgRick"></div>
+        <div id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="logo">
+            <h1>Mc Rick G</h1>
+        </div>
+
         <section id="sectionInicio">
-            <header>
+            <header id="headerInicio">
                 <h1>Ultimo lançamento</h1>
             </header>
-            <article>
-                <img src="./assets/images/img-inicio.png" alt="Mc Rick G">
+
+            <article id="articleInicio">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/oQ1bE2E_Iis?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </article>
         </section>
+
+        <div id="icons">
+            <a href="https://www.facebook.com/MCRickGOriginal" target="_BLANK"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/mcrickgoriginal/" target="_BLANK"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCrWiFT1EcnCwxdHUCwXV23w" target="_BLANK"><i class="fab fa-youtube"></i></a>
+        </div>
     </main>
 
-    <footer id="rodapeInicio">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-    </footer>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>

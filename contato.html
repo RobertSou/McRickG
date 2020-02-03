@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Mc Rick G | Sobre Mim</title>
+    <title>Mc Rick G | Contato</title>
 
     <link href="./assets/css/brands.min.css" rel="stylesheet">
     <link href="./assets/css/fontawesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/sobre.css">
 </head>
-<body class="sobre">
-    
+<body class="contato">
+
     <header id="cabecalho">
         <nav id="menu">
             <ul>
@@ -24,8 +24,8 @@
         </nav>
     </header>
     
-    <main id="mainSobre">
-        
+    <main id="mainContato">
+
         <div id="imgRick"></div>
         
         <div id="hamburger">
@@ -38,15 +38,28 @@
             <h1>Mc Rick G</h1>
         </div>
 
-        <section id="sectionSobre">
+        <section id="sectionContato">
 
-            <header id="headerSobre">
-                <h1>Sobre Mim</h1>
+            <header id="headerContato">
+                <h1>Contato</h1>
             </header>
-
-            <article id="articleSobre">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus at reprehenderit neque blanditiis maiores nisi ea minus iure corrupti provident. Repellendus id culpa delectus vel iusto laboriosam explicabo non facilis.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, iure vitae! Laborum numquam reprehenderit voluptas! Doloremque odit eius adipisci aut minus dicta voluptatem illum dolorem dolores tempore! Sint, quibusdam obcaecati.</p>
+            
+            <article id="articleContato">
+                <form id="contato" action="mailto:contato@mcrickgoriginal.com.br" method="post" enctype="text/plain">
+                    <label>Email: <input type="email" required></label>
+                    <label>Assunto: <input type="text" required></label>
+                    <label>Mensagem:
+                        <textarea 
+                            name="comment"
+                            form="contato"
+                            maxlength="200"
+                            rows="4"
+                            cols="50"
+                            placeholder="Mensagem.."
+                            required></textarea>
+                    </label>
+                    <input type="submit" value="ENVIAR">
+                </form>
             </article>
 
         </section>

@@ -23,9 +23,18 @@
   src: url("../fonts/Ubuntu-Bold.ttf");
 }
 
+:root {
+  --darkGrey: #212121;
+  --lighGrey: #FAFAFA;
+  --bgBlue: #20336B;
+  --bgYellow: #F9CE1C;
+  --darkYellow: #EAB12E;
+  --bgRed: #EE001E;
+}
+
 * {
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 html {
@@ -33,19 +42,578 @@ html {
   line-height: 1.2;
 }
 
+html, body{
+  overflow-x: hidden;
+}
+
 body {
+  min-height: 100vh;
   font-family: 'PermaMarker';
   font-size: 16px;
   margin: 0;
   padding: 0;
   border: 0;
+  position: relative;
+  background-color: var(--lighGrey);
 }
 
 iframe {
+  max-width: 100%;
+  height: 25vh;
   border-radius: 4px;
 }
 
-body {
-  background-color: #FAFAFA;
+img {
+  max-width: 100%;
 }
-/*# sourceMappingURL=main.css.map */
+
+/*========================================*/
+/*== Cabecalho Geral */
+/*========================================*/
+header#cabecalho {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  min-height: 100%;
+  z-index: 5;
+  transition: all .2s ease-in-out;
+}
+
+.show {
+  right: 0 !important;
+}
+
+header#cabecalho nav#menu {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header#cabecalho nav#menu ul {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;  
+  padding: 15px;
+  list-style-type: none;
+}
+
+header#cabecalho nav#menu ul li {
+  margin-bottom: 25px;
+}
+
+header#cabecalho nav#menu ul li a {
+  font-size: 1.6em;
+  text-decoration: none;
+  color: var(--lighGrey);
+  transition: border 0.3s linear;
+}
+
+header#cabecalho nav#menu ul li a:hover {
+  border-bottom: 1px solid var(--lighGrey);
+}
+
+/*========================================*/
+/*== Main Geral */
+/*========================================*/
+main {
+  min-width: calc(100% - 250px);
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1fr auto;
+  grid-gap: 10px;
+  padding: 10px;
+  position: relative;
+  background-color: var(--lighGrey);
+}
+
+.mainOpenedMenuD {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 90vh;
+  margin: 0;
+  transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/*========================================*/
+/*== Menu Hamburguer Geral */
+/*========================================*/
+main div#hamburger {
+  grid-column: 3 / 4;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-self: right;
+}
+
+main div#hamburger span {
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 4px;
+}
+
+.animationHamburguer {
+  position: relative;
+}
+
+.animationHamburguer span{
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+
+.animationHamburguer span:nth-child(1) {
+  transform: rotateZ(40deg);
+}
+
+.animationHamburguer span:nth-child(2) {
+  display: none !important;
+}
+
+.animationHamburguer span:nth-child(3) {
+  transform: rotateZ(-40deg);
+}
+
+
+/*========================================*/
+/*== Img Rick Geral */
+/*========================================*/
+div#imgRick {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  width: 50vw;
+  height: 40vh;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+body.home div#imgRick {
+  background-image: url('../images/img-inicio.png');
+}
+
+body.home div#imgRick {
+  width: 320px;
+  height: 320px;
+  right: 0;
+}
+
+body.sobre div#imgRick {
+  background-image: url('../images/img-sobre.png');
+}
+
+body.sobre div#imgRick {
+  width: 320px;
+  height: 320px;
+  right: 0;
+}
+
+body.contato div#imgRick {
+  background-image: url('../images/img-inicio.png');
+}
+
+/*========================================*/
+/*== Logo Geral */
+/*========================================*/
+main div#logo {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  display: flex;
+  justify-content: center;
+}
+
+main div#logo h1 {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+main#mainInicio div#logo h1 {
+  color: var(--bgBlue);
+}
+main#mainSobre div#logo h1 {
+  color: var(--bgYellow);
+}
+main#mainContato div#logo h1 {
+  color: var(--bgRed);
+}
+
+/*========================================*/
+/*== Icons Geral */
+/*========================================*/
+main div#icons {
+  grid-column: 1 / 2;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main div#icons a {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+/*========================================*/
+/*== Section Geral */
+/*========================================*/
+main section {
+  grid-column: 2 / 4;
+  grid-row: 2;
+}
+
+
+/*========================================*/
+/*== Página Inicial */
+/*========================================*/
+body.home header#cabecalho {
+  background-color: var(--bgBlue);
+}
+
+body.home main#mainInicio div#hamburger span {
+  background-color: var(--bgBlue);
+}
+
+/*========================================*/
+/*== Section Inicio */
+/*========================================*/
+body.home main#mainInicio section#sectionInicio {
+  position: relative;
+}
+
+body.home main#mainInicio section#sectionInicio header#headerInicio {
+  max-width: max-content;
+  background-color: var(--lighGrey);
+  box-shadow: 0px 3px 6px var(--darkGrey);
+  padding: 12px 15px;
+  border-radius: 4px;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+body.home main#mainInicio section#sectionInicio article#articleInicio {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 2;
+}
+
+body.home main#mainInicio section#sectionInicio header#headerInicio h1{
+  text-align: end;
+  margin: 0;
+}
+
+body.home main#mainInicio div#icons a {
+  color: var(--bgBlue);
+}
+
+/*========================================*/
+/*== Página Sobre */
+/*========================================*/
+body.sobre header#cabecalho {
+  background-color:var(--bgYellow);
+}
+
+section#sectionSobre {
+  position: relative;
+}
+
+section#sectionSobre header#headerSobre {
+  max-width: max-content;
+  background-color: var(--lighGrey);
+  box-shadow: 0px 3px 6px var(--darkGrey);
+  padding: 12px 15px;
+  border-radius: 4px;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+section#sectionSobre header#headerSobre h1{
+  text-align: end;
+  margin: 0 !important;
+}
+
+section#sectionSobre article#articleSobre {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 2;
+  background-color: var(--lighGrey);
+  box-shadow: 0px 3px 6px var(--darkGrey);
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+section#sectionSobre article#articleSobre p{
+  font-family: "UbuntuLight";
+  font-weight: 100;
+  font-size: 1.0em;
+}
+
+body.sobre main#mainSobre div#hamburger span {
+  background-color: var(--bgYellow);
+}
+
+body.sobre main#mainSobre div#icons a {
+  color: var(--bgYellow);
+}
+
+/*========================================*/
+/*== Página Contato */
+/*========================================*/
+body.contato header#cabecalho {
+  background-color: var(--bgRed);
+}
+
+section#sectionContato {
+  position: relative;
+}
+
+section#sectionContato header#headerContato {
+  max-width: max-content;
+  background-color: var(--lighGrey);
+  box-shadow: 0px 3px 6px var(--darkGrey);
+  padding: 12px 15px;
+  border-radius: 4px;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+section#sectionContato header#headerContato h1{
+  text-align: end;
+  margin: 0 !important;
+}
+
+section#sectionContato article#articleContato {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 2;
+  background-color: var(--lighGrey);
+  box-shadow: 0px 3px 6px var(--darkGrey);
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+body.contato main#mainContato div#hamburger span {
+  background-color: var(--bgRed);
+}
+
+body.contato main#mainContato div#icons a{ 
+  color: var(--bgRed);
+}
+
+/*========================================*/
+/*== Smartphone deitado */
+/*========================================*/
+@media screen and (max-height: 414px){
+
+  main{
+    padding: 5px !important;
+  }
+
+  main div#logo {
+    grid-column: 1 / 2 !important;
+    grid-row: 1 / 3 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  
+  main div#logo h1 {
+    writing-mode: vertical-rl !important;
+    text-orientation: upright !important;
+    font-size: 1.9em !important;
+    margin: 0 !important;
+  }
+
+  body.home div#imgRick,
+  body.sobre div#imgRick {
+    display: block;
+    width: 250px !important;
+    height: 250px !important;
+    right: 0;
+  }
+
+  iframe {
+    max-width: 50vw;
+    height: 50vh;
+  }
+  
+  section#sectionInicio{
+    justify-self: flex-start;
+  }
+  
+  section#sectionInicio header#headerInicio,
+  section#sectionInicio article#articleInicio {
+    max-width: fit-content;
+    position: initial;
+  }
+
+  section#sectionSobre header#headerSobre,
+  section#sectionSobre article#articleSobre {
+    max-width: fit-content;
+    position: initial;
+    width: 80%;
+  }
+  
+  main div#icons {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+}
+
+/*========================================*/
+/*== Versão Desktop ====== 768px =========*/
+/*========================================*/
+@media screen and (min-width: 768px){
+
+  main {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  body.home div#imgRick,
+  body.sobre div#imgRick {
+    width: 450px;
+    height: 450px;
+  }
+
+  div#logo {
+    grid-column: 1 / 3 !important;
+    grid-row: 1 !important;
+    justify-content: start !important;
+  }
+
+  div#logo h1 {
+    writing-mode: initial !important;
+    text-orientation: initial !important;
+    font-size: 3em !important;
+    margin: 0;
+  }
+
+  section#sectionInicio header#headerInicio,
+  section#sectionInicio article#articleInicio {
+    right: 30% !important;
+  }
+  
+  section#sectionSobre header#headerSobre,
+  section#sectionSobre article#articleSobre {
+    right: 30% !important;
+  }
+
+  section#sectionSobre article#articleSobre {
+    width: 70%;
+  }
+
+  main div#icons {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/*========================================*/
+/*== Versão Desktop ====== 1366px =========*/
+/*========================================*/
+@media screen and (min-width: 1366px){
+  main {
+    padding: 70px;
+  }
+
+  body.home div#imgRick,
+  body.sobre div#imgRick {
+    width: 520px;
+    height: 520px;
+    right: 10%;
+  }
+
+  section#sectionSobre article#articleSobre {
+    width: 50%;
+  }
+
+
+  section#sectionInicio header#headerInicio,
+  section#sectionInicio article#articleInicio {
+    right: 40% !important;
+  }
+  
+  section#sectionSobre header#headerSobre,
+  section#sectionSobre article#articleSobre {
+    right: 40% !important;
+  }
+
+  main div#icons {
+    width: 25%;
+  }
+
+}
+
+
+/*========================================*/
+/*== Versão Desktop ====== 1920PX =========*/
+/*========================================*/
+@media screen and (min-width: 1920px){
+  main {
+    padding: 70px;
+  }
+
+  body.home div#imgRick,
+  body.sobre div#imgRick {
+    width: 520px;
+    height: 520px;
+    right: 10%;
+  }
+
+  section#sectionSobre article#articleSobre {
+    width: 50%;
+  }
+
+
+  section#sectionInicio header#headerInicio,
+  section#sectionInicio article#articleInicio {
+    right: 40% !important;
+  }
+  
+  section#sectionSobre header#headerSobre,
+  section#sectionSobre article#articleSobre {
+    right: 40% !important;
+  }
+
+  main div#icons {
+    width: 25%;
+  }
+
+}
+
+
+
