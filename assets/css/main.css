@@ -235,6 +235,9 @@ main div#logo {
 }
 
 main div#logo h1 {
+  -ms-writing-mode: vertical-rl;
+  -epub-writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
   text-orientation: upright;
   font-size: 2.2em;
@@ -296,7 +299,7 @@ body.home main#mainInicio section#sectionInicio {
 }
 
 body.home main#mainInicio section#sectionInicio header#headerInicio {
-  max-width: max-content;
+  min-width: max-content;
   background-color: var(--lighGrey);
   box-shadow: 0px 3px 6px var(--darkGrey);
   padding: 12px 15px;
@@ -335,7 +338,7 @@ section#sectionSobre {
 }
 
 section#sectionSobre header#headerSobre {
-  max-width: max-content;
+  min-width: max-content;
   background-color: var(--lighGrey);
   box-shadow: 0px 3px 6px var(--darkGrey);
   padding: 12px 15px;
@@ -388,10 +391,10 @@ section#sectionContato {
 }
 
 section#sectionContato header#headerContato {
-  max-width: max-content;
+  min-width: max-content;
   background-color: var(--lighGrey);
   box-shadow: 0px 3px 6px var(--darkGrey);
-  padding: 12px 15px;
+  padding: 12px 10px;
   border-radius: 4px;
   z-index: 3;
   position: absolute;
@@ -418,13 +421,13 @@ article#articleContato form#contato {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 15px;
 }
 
 article#articleContato form#contato textarea,
 article#articleContato form#contato input {
   width: 100%;
-  padding: 15px 25px;
+  padding: 7px 15px;
   background-color: var(--lighGrey);
   border: 0;
   margin-bottom: 10px;
@@ -441,6 +444,7 @@ article#articleContato form#contato input::placeholder {
   color: var(--bgRed);
   font-weight: 700;
   font-size: 1.2em;
+  line-height: 1;
 }
 
 form#contato input[type^="submit"]{
@@ -529,6 +533,17 @@ body.contato main#mainContato div#icons a{
   section#sectionContato header#headerContato,
   section#sectionContato article#articleContato {
     right: 30% !important;
+  }
+
+  
+  article#articleContato form#contato {
+    padding: 30px;
+  }
+
+  article#articleContato form#contato textarea,
+  article#articleContato form#contato input {
+    width: 100%;
+    padding: 15px 25px;
   }
 
   main div#icons {
@@ -656,6 +671,7 @@ body.contato main#mainContato div#icons a{
     font-size: 3em !important;
     margin: 0;
   }
+
   body.home div#imgRick,
   body.sobre div#imgRick,
   body.contato div#imgRick {
