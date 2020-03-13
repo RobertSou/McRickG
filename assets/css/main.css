@@ -454,6 +454,10 @@ form#contato input[type^="submit"]{
   font-family: "PermaMarker";
   font-weight: 700;
   font-size: 1.3em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  opacity: 1;
 }
 
 form#contato input[type^="submit"]:hover {
